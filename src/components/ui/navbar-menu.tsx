@@ -1,9 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import Link, {LinkProps} from "next/link";
 import Image from "next/image";
 
+interface HoveredLinkProps extends LinkProps {
+    children: React.ReactNode;
+  }
+  
 const transition = {
   type: "spring",
   mass: 0.5,
@@ -109,13 +113,13 @@ export const ProductItem = ({
   );
 };
 
-export const HoveredLink = ({ children, ...rest }: any) => {
-  return (
-    <Link
-      {...rest}
-      className="text-neutral-700 dark:text-neutral-200 hover:text-black "
-    >
-      {children}
-    </Link>
-  );
-};
+export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
+    return (
+      <Link
+        {...rest}
+        className="text-neutral-700 dark:text-neutral-200 hover:text-black"
+      >
+        {children}
+      </Link>
+    );
+  };
