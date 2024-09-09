@@ -30,6 +30,7 @@ export default function RootLayout({
       >
         <nav className="w-1/2 mx-auto h-fit py-2 bg-slate-900 rounded-lg border border-blue-600 mt-2">
           <h1 className="text-center font-semibold text-blue-400 text-xl">Sourav Chhimpa</h1>
+          
         </nav>
         {children}
       </body>
