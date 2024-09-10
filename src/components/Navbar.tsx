@@ -37,26 +37,26 @@ function Navbar({ className }: { className?: string }) {
     <motion.nav
       initial={{ y: 0 }}
       animate={scrollDirection === 'down' ? { y: '-100%' } : { y: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 40 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 40 }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 bg-opacity-30 backdrop-blur-lg backdrop-filter transition-all duration-500',
         isOpen ? 'bg-black/70' : 'bg-transparent',
         className
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-lg mt-2">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/"
-               className="text-xl font-bold text-white">Byyte.co
+               className="text-xl font-bold text-white">Sourav
             </Link>
           </div>
           <div className="hidden md:flex space-x-8">
             <Link href="/"
                className="text-white hover:text-gray-400">Home
             </Link>
-            <Link href="/"
-               className="text-white hover:text-gray-400">Home
+            <Link href="/aboutme"
+               className="text-white hover:text-gray-400">About Me
             </Link>
             <Link href="/contact"
                className="text-white hover:text-gray-400">Contact Me
@@ -81,9 +81,9 @@ function Navbar({ className }: { className?: string }) {
              className="text-white hover:text-gray-400 text-xl" onClick={toggleMenu}>
               Home
           </Link>
-          <Link href="/contact"
+          <Link href="/aboutme"
                  className="text-white hover:text-gray-400 text-xl" onClick={toggleMenu}>
-              Contact Me
+              About Me
           </Link>
           <Link href="/contact"
                  className="text-white hover:text-gray-400 text-xl" onClick={toggleMenu}>
